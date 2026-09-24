@@ -1,4 +1,9 @@
 
+using Application.Interfaces;
+using Infrastructure.Persistance;
+using Infrastructure.Repositories;
+using Microsoft.EntityFrameworkCore;
+
 namespace Presentation
 {
     public class Program
@@ -12,6 +17,14 @@ namespace Presentation
             builder.Services.AddControllers();
             // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
             builder.Services.AddOpenApi();
+
+            //registrar DbContext y repositorio en el contenedor DI
+            builder.Services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"))
+            );
+
+            builder.Services.AddScoped<IProductRepository, ProductRepository>();
+
 
             var app = builder.Build();
 
