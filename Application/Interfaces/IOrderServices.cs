@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Application.Interfaces
 {
-    public interface IUserRepository
+    public interface IOrderServices
     {
     }
 }
