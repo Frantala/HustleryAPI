@@ -1,5 +1,5 @@
-using Application.Interfaces;
 using Domain.Entities;
+using Domain.Interfaces;
 using Infrastructure.Persistance;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
