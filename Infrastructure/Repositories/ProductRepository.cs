@@ -40,9 +40,9 @@ namespace Infrastructure.Repositories
             return await _context.Products.FindAsync(id);
         }
 
-        public async Task UpdateAsync(Product product)
+        public async Task UpdateAsync(Product product, int id)
         {
-            _context.Products.Update(product);
+            _context.Update(product);
             await _context.SaveChangesAsync();
         }
     }
