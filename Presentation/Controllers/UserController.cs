@@ -21,5 +21,12 @@ namespace Presentation.Controllers
             var users = _userService.GetAll();
             return Ok(users);
         }
+
+        [HttpPost]
+        public ActionResult Add(UserDto userDto)
+        {
+            _userService.Add(userDto);
+            return Ok();
+        }
     }
 }

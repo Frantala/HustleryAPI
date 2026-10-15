@@ -1,6 +1,18 @@
 @Presentation_HostAddress = http://localhost:5023
 
-GET {{Presentation_HostAddress}}/weatherforecast/
+### Crear un usuario
+POST {{Presentation_HostAddress}}/api/user
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": "Usuario de prueba3",
+  "email": "prueba@hustlery.local",
+  "role": "Customer"
+}
+
+### Verificar que el usuario se guardo en la base de datos
+GET {{Presentation_HostAddress}}/api/user
 Accept: application/json
 
 ###
