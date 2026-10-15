@@ -10,7 +10,7 @@ namespace Application.Interfaces
     {
         Task<ProductDto> GetByIdAsync(int id);
         Task<List<ProductDto>> GetAllAsync();
-        Task AddAsync(ProductDto product);
+        Task AddAsync(CreateProductDto product);
         Task UpdateAsync(ProductDto product);
         Task DeleteAsync(int id);
     }

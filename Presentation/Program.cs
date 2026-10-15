@@ -30,6 +30,8 @@ namespace Presentation
             builder.Services.AddScoped<IUserRepository, UserRepository>();
             builder.Services.AddScoped<IUserServices, UserService>();
             builder.Services.AddScoped<IProductRepository, ProductRepository>();
+            builder.Services.AddScoped<IProductServices, ProductService>();
+            
 
 
             var app = builder.Build();

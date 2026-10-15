@@ -2,7 +2,7 @@ using Application.Dto;
 using Application.Interfaces;
 using Domain.Interfaces;
 
-namespace Aplication.Services
+namespace Application.Services
 {
     public class ProductService : IProductServices
     {
@@ -41,7 +41,7 @@ namespace Aplication.Services
             }).ToList();
         }
 
-        public async Task AddAsync(ProductDto productDto)
+        public async Task AddAsync(CreateProductDto productDto)
         {
             var product = new Domain.Entities.Product
             {
