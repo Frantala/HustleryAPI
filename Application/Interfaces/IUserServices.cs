@@ -9,7 +9,7 @@ namespace Application.Interfaces
     {
         public List<UserDto> GetAll();
         public UserDto GetById(int id);
-        public void Add(UserDto userDto);
+        public void Add(CreateUserDto userDto);
         public void Update(UserDto userDto);
         public void Delete(int id);
     }

@@ -19,7 +19,7 @@ namespace Application.Services
 
             return users.Select(user => new UserDto
             {
-                
+                Id = user.Id,
                 Name = $"{user.Name}",
                 Email = user.Email,
                 Role = user.Role
@@ -37,17 +37,17 @@ namespace Application.Services
 
             return new UserDto
             {
+                Id = user.Id,
                 Name = $"{user.Name}",
                 Email = user.Email,
                 Role = user.Role
             };
         }
 
-        public void Add(UserDto userDto)
+        public void Add(CreateUserDto userDto)
         {
             var user = new Domain.Entities.User
             {
-                Id = userDto.Id,
                 Name = userDto.Name,
                 Email = userDto.Email,
                 Role = userDto.Role

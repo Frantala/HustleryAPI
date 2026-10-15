@@ -23,9 +23,16 @@ namespace Presentation.Controllers
         }
 
         [HttpPost]
-        public ActionResult Add(UserDto userDto)
+        public ActionResult Add(CreateUserDto userDto)
         {
             _userService.Add(userDto);
+            return Ok();
+        }
+
+        [HttpDelete("{id}")]
+        public ActionResult Delete(int id)
+        {
+            _userService.Delete(id);
             return Ok();
         }
     }
