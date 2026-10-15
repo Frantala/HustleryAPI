@@ -47,6 +47,7 @@ namespace Application.Services
         {
             var user = new Domain.Entities.User
             {
+                Id = userDto.Id,
                 Name = userDto.Name,
                 Email = userDto.Email,
                 Role = userDto.Role

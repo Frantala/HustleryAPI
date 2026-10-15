@@ -5,6 +5,7 @@ using Domain.Interfaces;
 using Infrastructure.Persistance;
 using Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
+using Scalar.AspNetCore;
 
 namespace Presentation
 {
@@ -43,6 +44,7 @@ namespace Presentation
             if (app.Environment.IsDevelopment())
             {
                 app.MapOpenApi();
+                app.MapScalarApiReference();
             }
 
             app.UseHttpsRedirection();
