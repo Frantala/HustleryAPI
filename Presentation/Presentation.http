@@ -16,3 +16,5 @@ GET {{Presentation_HostAddress}}/api/user
 Accept: application/json
 
 ###
+GET {{Presentation_HostAddress}}/api/product
+Accept: application/json

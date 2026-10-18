@@ -5,6 +5,7 @@ using Domain.Interfaces;
 using Infrastructure.Persistance;
 using Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
+using Presentation.Middlwares;
 using Scalar.AspNetCore;
 
 namespace Presentation
@@ -36,6 +37,8 @@ namespace Presentation
 
             var app = builder.Build();
 
+            // Manejo global de excepciones
+            app.UseMiddleware<ExceptionMiddleware>();
             using (var scope = app.Services.CreateScope())
             {
                 var dbContext = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
