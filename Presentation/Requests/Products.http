@@ -1,0 +1,4 @@
+@Presentation_HostAddress = http://localhost:5023
+
+GET {{Presentation_HostAddress}}/api/product
+Accept: application/json
