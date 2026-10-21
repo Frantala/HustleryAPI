@@ -2,3 +2,15 @@
 
 GET {{Presentation_HostAddress}}/api/product
 Accept: application/json
+
+### 
+
+POST {{Presentation_HostAddress}}/api/product
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": "gorra1",
+  "marca": "ny",
+  "price": 25000
+}
