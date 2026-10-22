@@ -49,8 +49,7 @@ namespace Application.Services
             var user = new Domain.Entities.User
             {
                 Name = userDto.Name,
-                Email = userDto.Email,
-                Role = userDto.Role
+                Email = userDto.Email
             };
 
             _userRepository.Add(user);

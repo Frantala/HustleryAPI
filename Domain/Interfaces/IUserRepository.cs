@@ -16,5 +16,7 @@ namespace Domain.Interfaces
         public void Update(User user);
 
         public void Delete(int id);
+
+        public User? Authenticate(string username, string password);
     }
 }

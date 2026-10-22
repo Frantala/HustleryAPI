@@ -3,6 +3,7 @@ using Application.Models;
 using Domain.Entities;
 using Infrastructure.Repositories;
 using Microsoft.AspNetCore.Mvc;
+using Domain.Interfaces;
 
 namespace Presentation.Controllers
 {
@@ -10,11 +11,13 @@ namespace Presentation.Controllers
     [ApiController]
     public class AuthenticatorController : ControllerBase
     {
+        public readonly IUserServices UserServices;
+        public readonly IProductServices ProductServices;
 
-        private readonly UserRepository _userRepository;
-        public AuthenticatorController(UserRepository userRepository) 
+        private readonly IUserRepository _userRepository;
+        public AuthenticatorController(IUserRepository userRepository) 
         { 
-        
+            _userRepository = userRepository;
         }
 
 
