@@ -1,5 +1,6 @@
 using Application.Dto;
 using Application.Interfaces;
+using Domain.Exceptions;
 using Domain.Interfaces;
 
 namespace Application.Services
@@ -7,6 +8,7 @@ namespace Application.Services
     public class UserService : IUserServices
     {
         private readonly IUserRepository _userRepository;
+        private object _hasher;
 
         public UserService(IUserRepository userRepository)
         {
@@ -79,5 +81,9 @@ namespace Application.Services
 
             _userRepository.Delete(id);
         }
+
+        // Autenticacion del usuario
+        
+
     }
 }

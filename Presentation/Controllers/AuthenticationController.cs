@@ -9,20 +9,20 @@ namespace Presentation.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AuthenticatorController : ControllerBase
+    public class AuthenticationController : ControllerBase
     {
         public readonly IUserServices UserServices;
         public readonly IProductServices ProductServices;
 
         private readonly IUserRepository _userRepository;
-        public AuthenticatorController(IUserRepository userRepository) 
+        public AuthenticationController(IUserRepository userRepository) 
         { 
             _userRepository = userRepository;
         }
 
 
-        [HttpPost]
-        public IActionResult Authentication([FromBody] CredentialAuthenticateDto credentials)
+        [HttpPost("authenticate")]
+        public ActionResult<string> Authentication([FromBody] CredentialAuthenticateDto credentials)
         {
 
             User? userAuthenticated = _userRepository.Authenticate(credentials.Name, credentials.Password);
