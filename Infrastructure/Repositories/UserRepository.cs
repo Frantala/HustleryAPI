@@ -13,6 +13,15 @@ namespace Infrastructure.Repositories
             _context = context;
         }
 
+        public User? Authenticate(string username, string password)
+        {
+            User? userToAuthenticate = _context.Users.FirstOrDefault(u => u.Name == username && u.Password == password);
+
+            // ya retorna nulo 
+            return userToAuthenticate;
+
+        }
+
         public List<User> GetAll()
         {
             return _context.Users.ToList();

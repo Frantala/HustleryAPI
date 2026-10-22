@@ -1,0 +1,47 @@
+﻿@Presentation_HostAddress = http://localhost:5023
+
+
+### Registro de usuario
+POST {{Host}}/api/auth/register
+Content-Type: application/json
+
+{
+  "nombre": "Franco",
+  "email": "franco@gmail.com",
+  "password": "Password123*"
+}
+
+###
+
+### Login
+POST {{Host}}/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "franco@gmail.com",
+  "password": "Password123*"
+}
+
+###
+
+### Obtener perfil (requiere JWT)
+GET {{Host}}/api/auth/profile
+Authorization: Bearer {{token}}
+
+###
+
+### Endpoint protegido de ejemplo
+GET {{Host}}/api/productos
+Authorization: Bearer {{token}}
+
+###
+
+### Crear recurso protegido
+POST {{Host}}/api/productos
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "nombre": "Notebook",
+  "precio": 1500
+}

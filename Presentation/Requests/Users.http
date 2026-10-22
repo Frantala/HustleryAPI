@@ -6,7 +6,7 @@ Content-Type: application/json
 Accept: application/json
 
 {
-  "name": "Usuario de prueba4",
+  "name": "Usuario de prueba1",
   "email": "prueba@hustlery.local",
   "role": "Customer"
 }
