@@ -1,6 +1,7 @@
-﻿using Domain.Interfaces;
-using Domain.Entities;
+﻿using Domain.Entities;
+using Domain.Interfaces;
 using Infrastructure.Persistance;
+using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Repositories
 {
@@ -53,12 +54,15 @@ namespace Infrastructure.Repositories
 
         public void Delete(int id)
         {
-            var user = _context.Users.FirstOrDefault(u => u.Id == id);
-            if (user != null)
+            var users = _context.Users.ToList();
+
+            if (users.Any())
             {
-                _context.Users.Remove(user);
+                _context.Users.RemoveRange(users);
                 _context.SaveChanges();
             }
+
+            _context.Database.ExecuteSqlRaw("DELETE FROM sqlite_sequence WHERE name = 'Users'");
         }
     }
 }

@@ -21,8 +21,7 @@ namespace Application.Services
             {
                 Id = user.Id,
                 Name = $"{user.Name}",
-                Email = user.Email,
-                Role = user.Role
+                Email = user.Email
             }).ToList();
         }
 
@@ -39,8 +38,7 @@ namespace Application.Services
             {
                 Id = user.Id,
                 Name = $"{user.Name}",
-                Email = user.Email,
-                Role = user.Role
+                Email = user.Email
             };
         }
 
@@ -66,7 +64,6 @@ namespace Application.Services
 
             user.Name = userDto.Name;
             user.Email = userDto.Email;
-            user.Role = userDto.Role;
 
             _userRepository.Update(user);
         }
